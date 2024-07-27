@@ -4,19 +4,19 @@ INSERT INTO departments (department_name) VALUES
   ('HR');
 
 INSERT INTO roles (
-    title,
+    role_title,
     salary,
-    department_id,
+    department_id
 ) VALUES
-  ('Intern', 0 , 1),
+  ('Intern', 0, 1),
   ('Senior Accountant', 90000, 2),
-  ('Junior Engineer' 70000, 3);
+  ('Junior Engineer', 70000, 1);
 
 INSERT INTO employees (
     first_name, 
     last_name, 
     role_id, 
-    manager_id,
+    manager_id
 ) VALUES
   ('John', 'Smith', 1, 2),
   ('Jane', 'Doe', 3, 2),

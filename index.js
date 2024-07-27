@@ -1,5 +1,7 @@
 const { Client } = require('pg')
 const inquirer = require('inquirer')
+const MenuSystem = require('./lib/MenuSystem');
+
 const client = new Client({
     user: 'postgres',
     password: 'pass',
@@ -28,25 +30,32 @@ async function showMainMenu(){
         
             switch (answerObj.choice) {
               case 'View all departments':
-                viewDepartments();
+                await MenuSystem.viewAllDepartments();
+                showMainMenu()
                 break;
               case 'View all roles':
-                viewRoles();
+                await MenuSystem.viewAllRoles();
+                showMainMenu()
                 break;
               case 'View all employees':
-                viewEmployees();
+                await MenuSystem.viewAllEmployees();
+                showMainMenu()
                 break;
               case 'Add a department':
-                addDepartment();
+                await MenuSystem.showAddDeparmentPrompt();
+                showMainMenu()
                 break;
               case 'Add a role':
-                addRole();
+                await MenuSystem.showAddRolePrompt();
+                showMainMenu()
                 break;
               case 'Add an employee':
-                addEmployee();
+                await MenuSystem.showAddEmployeePrompt();
+                showMainMenu()
                 break;
               case 'Update an employee role':
-                updateEmployeeRole();
+                await MenuSystem.updateEmployeeRole();
+                showMainMenu()
                 break;
               case 'Quit':
                 client.end();
