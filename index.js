@@ -16,12 +16,12 @@ async function showMainMenu(){
                 message: 'What would you like to do?',
                 choices: [
                     'View all employees',
-                    'Add employee',
+                    'Add an employee',
                     'Update an employee role',
                     'View all roles',
                     'Add a role',
                     'View all departments',
-                    'Add department',
+                    'Add a department',
                     'Quit',
     
                     ],
@@ -74,18 +74,3 @@ async function init(){
 }
 
 init();
-        
-      
-        
-
-
-
-
-    
-
-
-    // const sql = `INSERT INTO students (first_name, last_name, course_name) VALUES($1, $2, $3)`;
-
-    // await client.query(sql, [answerObj.first_name, answerObj.last_name, answerObj.course_name])
-
-    // console.log('Student Created')
